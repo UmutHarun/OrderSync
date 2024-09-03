@@ -76,15 +76,6 @@
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_responsive.scss" />
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_typography.scss" />
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_variables.scss" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\components.html" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\forms.html" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\icons.html" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\index.html" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\LICENSE" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\notifications.html" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\README.md" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\tables.html" />
-    <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\typography.html" />
   </ItemGroup>
 
   <ItemGroup>
