@@ -1,6 +1,17 @@
+using OrderSync.BusinessLayer.Abstract;
+using OrderSync.BusinessLayer.Concrete;
+using OrderSync.DataAccessLayer.Abstract;
+using OrderSync.DataAccessLayer.Concrete;
+using OrderSync.DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<OrderSyncDbContext>();
+
+builder.Services.AddScoped<IAboutService,AboutManager>();
+builder.Services.AddScoped<IAboutDal,EfAboutDal>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
