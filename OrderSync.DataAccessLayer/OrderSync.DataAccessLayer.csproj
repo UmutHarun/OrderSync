@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Order.EntityLayer\OrderSync.EntityLayer.csproj" />
+    <ProjectReference Include="..\OrderSync.DtoLayer\OrderSync.DtoLayer.csproj" />
   </ItemGroup>
 
 </Project>

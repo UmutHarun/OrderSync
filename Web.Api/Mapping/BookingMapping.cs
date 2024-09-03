@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using SignalR.DtoLayer.BookingDto;
-using SignalR.EntiyLayer.Entities;
+using OrderSync.DtoLayer.BookingDto;
+using OrderSync.EntityLayer.Entities;
 
 namespace SignalRApi.Mapping
 {

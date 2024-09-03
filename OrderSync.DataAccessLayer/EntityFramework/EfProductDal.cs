@@ -1,4 +1,5 @@
-﻿using OrderSync.DataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderSync.DataAccessLayer.Abstract;
 using OrderSync.DataAccessLayer.Concrete;
 using OrderSync.DataAccessLayer.Repositories;
 using OrderSync.EntityLayer.Entities;
@@ -14,6 +15,13 @@ namespace OrderSync.DataAccessLayer.EntityFramework
     {
         public EfProductDal(OrderSyncDbContext dbContext) : base(dbContext)
         {
+        }
+
+        public List<Product> GetProductsWithCategories()
+        {
+            var context = new OrderSyncDbContext();
+            var values = context.Products.Include(x => x.Category).ToList();
+            return values;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using SignalR.DtoLayer.SliderDto;
-using SignalR.EntityLayer.Entities;
+using OrderSync.DtoLayer.SliderDto;
+using OrderSync.EntityLayer.Entities;
 
 namespace SignalRApi.Mapping
 {
