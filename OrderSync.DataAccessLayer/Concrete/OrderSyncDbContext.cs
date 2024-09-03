@@ -1,11 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SignalR.EntityLayer.Entities;
-using SignalR.EntiyLayer.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OrderSync.EntityLayer.Entities;
 
 namespace OrderSync.DataAccessLayer.Concrete
 {
@@ -13,7 +7,7 @@ namespace OrderSync.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-LMK3OGQ;initial Catalog=OrderSyncDb;integrated Security=true;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-LMK3OGQ;initial Catalog=OrderSyncDb;integrated Security=true;TrustServerCertificate=True;");
         }
 
         public DbSet<About> Abouts { get; set; }

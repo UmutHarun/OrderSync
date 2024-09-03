@@ -1,4 +1,4 @@
-﻿namespace SignalR.EntityLayer.Entities
+﻿namespace OrderSync.EntityLayer.Entities
 {
     public class Testimonial
     {

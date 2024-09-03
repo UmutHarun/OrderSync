@@ -1,6 +1,4 @@
-﻿using SignalR.EntityLayer.Entities;
-
-namespace SignalR.EntiyLayer.Entities
+﻿namespace OrderSync.EntityLayer.Entities
 {
     public class Product
     {

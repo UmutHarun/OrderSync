@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Api", "Web.Api\Web.Api.csproj", "{4ED0EAEF-51DE-417F-8CF2-BB9922941374}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Api", "Web.Api\Web.Api.csproj", "{4ED0EAEF-51DE-417F-8CF2-BB9922941374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.UI", "Web.UI\Web.UI.csproj", "{90EA48A5-B01B-4DDB-A2F0-46796DB31FFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.UI", "Web.UI\Web.UI.csproj", "{90EA48A5-B01B-4DDB-A2F0-46796DB31FFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.EntityLayer", "Order.EntityLayer\Order.EntityLayer.csproj", "{0F4B1B1F-94CC-49E4-82BD-8B4C24F36BDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderSync.EntityLayer", "Order.EntityLayer\OrderSync.EntityLayer.csproj", "{0F4B1B1F-94CC-49E4-82BD-8B4C24F36BDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSync.DataAccessLayer", "OrderSync.DataAccessLayer\OrderSync.DataAccessLayer.csproj", "{57D67B3D-8551-49F6-8923-A351C028B612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderSync.DataAccessLayer", "OrderSync.DataAccessLayer\OrderSync.DataAccessLayer.csproj", "{57D67B3D-8551-49F6-8923-A351C028B612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSync.DtoLayer", "OrderSync.DtoLayer\OrderSync.DtoLayer.csproj", "{4F9FDA9B-D69A-4086-B357-F7801CFC2EC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderSync.DtoLayer", "OrderSync.DtoLayer\OrderSync.DtoLayer.csproj", "{4F9FDA9B-D69A-4086-B357-F7801CFC2EC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSync.BusinessLayer", "OrderSync.BusinessLayer\OrderSync.BusinessLayer.csproj", "{399B70F6-7933-4BB6-992D-EF43FBBC53C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderSync.BusinessLayer", "OrderSync.BusinessLayer\OrderSync.BusinessLayer.csproj", "{399B70F6-7933-4BB6-992D-EF43FBBC53C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

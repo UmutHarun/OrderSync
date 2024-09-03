@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalR.EntityLayer.Entities
+namespace OrderSync.EntityLayer.Entities
 {
     public class Order
     {
