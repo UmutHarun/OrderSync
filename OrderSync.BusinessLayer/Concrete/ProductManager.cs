@@ -43,6 +43,36 @@ namespace OrderSync.BusinessLayer.Concrete
             return _productDal.GetProductsWithCategories();
         }
 
+        public int TProductCount()
+        {
+            return _productDal.ProductCount();
+        }
+
+        public int TProductCountByDrink()
+        {
+            return _productDal.ProductCountByDrink();
+        }
+
+        public int TProductCountByHamburger()
+        {
+            return _productDal.ProductCountByHamburger();
+        }
+
+        public string TProductNameByMaxPrice()
+        {
+            return _productDal.ProductNameByMaxPrice();
+        }
+
+        public string TProductNameByMinPrice()
+        {
+            return _productDal.ProductNameByMinPrice();
+        }
+
+        public decimal TProductPriceAvg()
+        {
+            return _productDal.ProductPriceAvg();
+        }
+
         public void TUpdate(Product entity)
         {
             _productDal.Update(entity);

@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace OrderSync.BusinessLayer.Abstract
 {
-    public interface ICategoryService : IGenericService<Category>
+    public interface IOrderService : IGenericService<Order>
     {
-        public int TCategoryCount();
-        public int TActiveCategoryCount();
-        public int TPassiveCategoryCount();
+        int TTotalOrderCount();
+        int TActiveOrderCount();
     }
 }

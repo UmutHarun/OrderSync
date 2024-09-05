@@ -15,5 +15,23 @@ namespace OrderSync.DataAccessLayer.EntityFramework
         public EfCategoryDal(OrderSyncDbContext dbContext) : base(dbContext)
         {
         }
+
+        public int ActiveCategoryCount()
+        {
+            using var context = new OrderSyncDbContext();
+            return context.Products.Where(x => x.ProductStatus == true).Count();
+        }
+
+        public int CategoryCount()
+        {
+            using var context = new OrderSyncDbContext();
+            return context.Categories.Count();
+        }
+
+        public int PassiveCategoryCount()
+        {
+            using var context = new OrderSyncDbContext();
+            return context.Products.Where(x => x.ProductStatus == false).Count();
+        }
     }
 }

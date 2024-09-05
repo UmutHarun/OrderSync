@@ -4,8 +4,21 @@ using OrderSync.DataAccessLayer.Abstract;
 using OrderSync.DataAccessLayer.Concrete;
 using OrderSync.DataAccessLayer.EntityFramework;
 using System.Reflection;
+using Web.Api.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .SetIsOriginAllowed((host) => true)
+        .AllowCredentials();
+    });
+});
+
+builder.Services.AddSignalR();
 
 // Add services to the container.
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
@@ -38,6 +51,12 @@ builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 
+builder.Services.AddScoped<IOrderService, OrderManager>();
+builder.Services.AddScoped<IOrderDal, EfOrderDal>();
+
+builder.Services.AddScoped<IOrderDetailService, OrderDetailManager>();
+builder.Services.AddScoped<IOrderDetailDal, EfOrderDetailDal>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -52,10 +71,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<SignalRHub>("/signalrhub");
 
 app.Run();
