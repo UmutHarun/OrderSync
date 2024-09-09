@@ -6,7 +6,7 @@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
 
 <div class="content">
     <div class="container-fluid">
@@ -16,7 +16,7 @@
 
             $(document).ready(() => {
 
-                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7186/SignalRHub").build();
+                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7007/SignalRHub").build();
                 $("#connstatus").text(connection.state);
                 connection.start().then(() => {
                     $("#connstatus").text(connection.state);
@@ -42,13 +42,13 @@
                     $("#passivecategorycount").text(value4);
                 });
 
-                connection.on("ReceiveProductCountByCategoryNameHamburger", (value5) => {
-                    $("#productcountbycategorynamehamburger").text(value5);
-                });
+                // connection.on("ReceiveProductCountByCategoryNameHamburger", (value5) => {
+                //     $("#productcountbycategorynamehamburger").text(value5);
+                // });
 
-                connection.on("ReceiveProductCountByCategoryNameDrink", (value6) => {
-                    $("#receiveproductcountbycategorynamedrink").text(value6);
-                });
+                // connection.on("ReceiveProductCountByCategoryNameDrink", (value6) => {
+                //     $("#receiveproductcountbycategorynamedrink").text(value6);
+                // });
 
                 connection.on("ReceiveProductPriceAvg", (value7) => {
                     $("#receiveproductpriceavg").text(value7);
@@ -62,9 +62,9 @@
                     $("#productnamebyminprice").text(value9);
                 });
 
-                connection.on("ReceiveProductAvgPriceByHamburger", (value10) => {
-                    $("#productavgpricebyhamburger").text(value10);
-                });
+                // connection.on("ReceiveProductAvgPriceByHamburger", (value10) => {
+                //     $("#productavgpricebyhamburger").text(value10);
+                // });
 
                 connection.on("ReceiveTotalOrderCount", (value11) => {
                     $("#totalordercount").text(value11);
@@ -74,9 +74,9 @@
                     $("#activerrdercount").text(value12);
                 });
 
-                connection.on("ReceiveLastOrderPrice", (value13) => {
-                    $("#lastorderprice").text(value13);
-                });
+                // connection.on("ReceiveLastOrderPrice", (value13) => {
+                //     $("#lastorderprice").text(value13);
+                // });
 
                 connection.on("ReceiveTotalMoneyCaseAmount", (value14) => {
                     $("#totalmoneycaseamount").text(value14);
@@ -188,7 +188,7 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Hamburger</p>
-                                    <h4 class="card-title" id="productcountbycategorynamehamburger"></h4>
+                                    @* <h4 class="card-title" id="productcountbycategorynamehamburger"></h4> *@
                                 </div>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">İçecek Sayısı</p>
-                                    <h4 class="card-title" id="receiveproductcountbycategorynamedrink"></h4>
+                                    @* <h4 class="card-title" id="receiveproductcountbycategorynamedrink"></h4> *@
                                 </div>
                             </div>
                         </div>
@@ -286,7 +286,7 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Hamburger Fiyat</p>
-                                    <h4 class="card-title" id="productavgpricebyhamburger"></h4>
+                                    @* <h4 class="card-title" id="productavgpricebyhamburger"></h4> *@
                                 </div>
                             </div>
                         </div>
@@ -346,7 +346,7 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Son Sipariş</p>
-                                    <h4 class="card-title" id="lastorderprice"></h4>
+                                    @* <h4 class="card-title" id="lastorderprice"></h4> *@
                                 </div>
                             </div>
                         </div>
