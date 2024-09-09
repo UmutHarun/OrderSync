@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace OrderSync.DataAccessLayer.Abstract
 {
-    public interface IOrderDal : IGenericDal<Order>
+    public interface IMenuTableDal : IGenericDal<MenuTable>
     {
-        int TotalOrderCount();
-        int ActiveOrderCount();
-        decimal TodayTotalPrice();
+        int TotalMenuTableCount();
     }
 }

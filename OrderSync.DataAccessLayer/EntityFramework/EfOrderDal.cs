@@ -22,6 +22,12 @@ namespace OrderSync.DataAccessLayer.EntityFramework
             return context.Orders.Where(x => x.Description == "Preparing").Count();
         }
 
+        public decimal TodayTotalPrice()
+        {
+            using var context = new OrderSyncDbContext();
+            return context.Orders.Where(x => x.OrderDate==DateTime.Today).Sum(x => x.TotalPrice);
+        }
+
         public int TotalOrderCount()
         {
             using var context = new OrderSyncDbContext();
