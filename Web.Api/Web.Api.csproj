@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OrderSync.BusinessLayer\OrderSync.BusinessLayer.csproj" />
+    <ProjectReference Include="..\OrderSync.DataAccessLayer\OrderSync.DataAccessLayer.csproj" />
     <ProjectReference Include="..\OrderSync.DtoLayer\OrderSync.DtoLayer.csproj" />
   </ItemGroup>
 

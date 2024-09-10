@@ -1,4 +1,5 @@
-﻿using OrderSync.DataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderSync.DataAccessLayer.Abstract;
 using OrderSync.DataAccessLayer.Concrete;
 using OrderSync.DataAccessLayer.Repositories;
 using OrderSync.EntityLayer.Entities;
@@ -19,7 +20,7 @@ namespace OrderSync.DataAccessLayer.EntityFramework
         public List<Basket> GetBasketByTableNumber(int id)
         {
             using var context = new OrderSyncDbContext();
-            return context.Baskets.Where(x => x.MenuTableID == id).ToList();  
+            return context.Baskets.Where(x => x.MenuTableID == id).Include(y => y.Product).ToList();
         }
     }
 }

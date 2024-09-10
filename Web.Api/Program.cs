@@ -4,6 +4,7 @@ using OrderSync.DataAccessLayer.Abstract;
 using OrderSync.DataAccessLayer.Concrete;
 using OrderSync.DataAccessLayer.EntityFramework;
 using System.Reflection;
+using System.Text.Json.Serialization;
 using Web.Api.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -68,6 +69,12 @@ builder.Services.AddScoped<ISliderDal, EfSliderDal>();
 
 builder.Services.AddScoped<IBasketService, BasketManager>();
 builder.Services.AddScoped<IBasketDal, EfBasketDal>();
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
