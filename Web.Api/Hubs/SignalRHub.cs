@@ -20,14 +20,18 @@ namespace Web.Api.Hubs
         private readonly IMoneyCaseService _moneyCaseService;
         private readonly IMenuTableService _menuTableService;
         private readonly IBookingService _bookingService;
-        public SignalRHub(ICategoryService categoryService, IProductService productService, IOrderService orderService, IMoneyCaseService moneyCaseService, IMenuTableService menuTableService, IBookingService bookingService)
+        private readonly INotificationService _notificationService;
+
+        public SignalRHub(OrderSyncDbContext context, ICategoryService categoryService, IProductService productService, IOrderService orderService, IMoneyCaseService moneyCaseService, IMenuTableService menuTableService, IBookingService bookingService, INotificationService notificationService)
         {
+            this.context = context;
             _categoryService = categoryService;
             _productService = productService;
             _orderService = orderService;
             _moneyCaseService = moneyCaseService;
             _menuTableService = menuTableService;
             _bookingService = bookingService;
+            _notificationService = notificationService;
         }
 
         public async Task SendStatistic()
@@ -108,6 +112,11 @@ namespace Web.Api.Hubs
 
             //var value11 = _productService.TTotalPriceBySaladCategory();
             //await Clients.All.SendAsync("ReceiveTotalPriceBySaladCategory", value11);
+        }
+        public async Task SendNotification()
+        {
+            var value = _notificationService.TNotificationCountByFalseStatus();
+            await Clients.All.SendAsync("ReceiveNotificationCountByFalse", value);
         }
     }
 }

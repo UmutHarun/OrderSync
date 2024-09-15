@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderSync.DataAccessLayer.Abstract
+namespace OrderSync.BusinessLayer.Abstract
 {
-    public interface INotificationDal : IGenericDal<Notification>
+    public interface INotificationService : IGenericService<Notification>
     {
-        int NotificationCountByFalseStatus();
+        int TNotificationCountByFalseStatus();
     }
 }

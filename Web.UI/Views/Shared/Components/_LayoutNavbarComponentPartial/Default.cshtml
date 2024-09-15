@@ -1,47 +1,31 @@
 ﻿﻿<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
 
 <div class="main-header">
 
-	@* <script type="text/javascript">
-
+	@section Scripts
+	{
 		$(document).ready(() => {
 
-			var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7186/SignalRHub").build();
-			$("#connstatus").text(connection.state);
-			connection.start().then(() => {
-				$("#connstatus").text(connection.state);
-				setInterval(() => {
-					connection.invoke("SendNotification");
-				}, 1000);
-			}).catch((err) => { console.log(err) });
+		var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7007/SignalRHub").build();
+		$("#connstatus").text(connection.state);
+		connection.start().then(() => {
+		$("#connstatus").text(connection.state);
+		setInterval(() => {
+		connection.invoke("SendNotification");
+		}, 1000);
+		}).catch((err) => { console.log(err) });
 
 
-			connection.on("ReceiveNotificationCountByFalse", (value) => {
-				$("#notificationcount").text(value);
-			});
-
-			connection.on("ReceiveNotificationListByFalse", (value) => {
-				console.log(value);
-				$("#notilist").empty();
-				for (var i = 0; i < value.length; i++) {
-					$("#notilist").append(`<a href="#">
-							<div class="${value[i].type}"><i class="${value[i].icon}"></i></div>
-							<div class="notif-content">
-							<span class="block">
-							${value[i].description}
-							</span>
-							<span class="time">${value[i].date}</span>
-							</div>
-							</a>
-							`)
-				};
-			});
+		connection.on("ReceiveNotificationCountByFalse", (value) => {
+		$("#notificationcount").text(value);
 		});
 
-	</script> *@
+
+		});
+	}
 
 	<div class="logo-header">
 		<a href="index.html" class="logo">
@@ -118,6 +102,12 @@
 						<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Çıkış Yap</a>
 					</ul>
 					<!-- /.dropdown-user -->
+					<div class="row">
+						<div class="col-md-8 offset-2">
+							<div class="alert alert-success">Bağlantının Durumu:<strong id="connstatus"></strong></div>
+							<div class="alert alert-info">Category Count:<strong id="categorycount"></strong></div>
+						</div>
+					</div>
 				</li>
 			</ul>
 		</div>
