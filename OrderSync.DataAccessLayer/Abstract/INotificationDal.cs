@@ -10,5 +10,6 @@ namespace OrderSync.DataAccessLayer.Abstract
     public interface INotificationDal : IGenericDal<Notification>
     {
         int NotificationCountByFalseStatus();
+        List<Notification> GetAllNotificationByFalse();
     }
 }

@@ -117,6 +117,10 @@ namespace Web.Api.Hubs
         {
             var value = _notificationService.TNotificationCountByFalseStatus();
             await Clients.All.SendAsync("ReceiveNotificationCountByFalse", value);
-        }
+
+
+		    var value2 = _notificationService.TGetAllNotificationByFalse();
+			await Clients.All.SendAsync("ReceiveNotificationListByFalse", value2);
+		}
     }
 }

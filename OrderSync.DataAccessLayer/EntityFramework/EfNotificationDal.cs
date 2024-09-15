@@ -16,7 +16,13 @@ namespace OrderSync.DataAccessLayer.EntityFramework
         {
         }
 
-        public int NotificationCountByFalseStatus()
+		public List<Notification> GetAllNotificationByFalse()
+		{
+			using var context = new OrderSyncDbContext();
+			return context.Notifications.Where(x => x.Status == false).ToList();
+		}
+
+		public int NotificationCountByFalseStatus()
         {
             using var context = new OrderSyncDbContext();
             return context.Notifications.Where(x => x.Status == false).Count();

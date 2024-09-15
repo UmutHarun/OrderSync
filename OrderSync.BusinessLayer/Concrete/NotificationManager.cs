@@ -33,7 +33,12 @@ namespace OrderSync.BusinessLayer.Concrete
             return _notificationDal.GetAll();
         }
 
-        public Notification TGetById(int id)
+		public List<Notification> TGetAllNotificationByFalse()
+		{
+			return _notificationDal.GetAllNotificationByFalse();
+		}
+
+		public Notification TGetById(int id)
         {
             return _notificationDal.GetById(id);
         }
