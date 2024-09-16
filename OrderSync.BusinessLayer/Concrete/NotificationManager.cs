@@ -23,7 +23,17 @@ namespace OrderSync.BusinessLayer.Concrete
             _notificationDal.Add(entity);
         }
 
-        public void TDelete(Notification entity)
+		public void TChangeNotificationToFalse(int id)
+		{
+            _notificationDal.ChangeNotificationToFalse(id);
+		}
+
+		public void TChangeNotificationToTrue(int id)
+		{
+			_notificationDal.ChangeNotificationToTrue(id);
+		}
+
+		public void TDelete(Notification entity)
         {
             _notificationDal.Delete(entity);
         }

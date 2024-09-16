@@ -122,5 +122,14 @@ namespace Web.Api.Hubs
 		    var value2 = _notificationService.TGetAllNotificationByFalse();
 			await Clients.All.SendAsync("ReceiveNotificationListByFalse", value2);
 		}
-    }
+		public async Task GetMenuTableStatus()
+		{
+			var value = _menuTableService.TGetAll();
+			await Clients.All.SendAsync("ReceiveMenuTableStatus", value);
+		}
+        public async Task SendMessage(string user,string message)
+        {
+            await Clients.All.SendAsync("ReceiveMessage",user, message);
+        }
+	}
 }

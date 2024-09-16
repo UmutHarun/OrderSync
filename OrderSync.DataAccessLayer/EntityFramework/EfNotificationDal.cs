@@ -16,6 +16,22 @@ namespace OrderSync.DataAccessLayer.EntityFramework
         {
         }
 
+		public void ChangeNotificationToFalse(int id)
+		{
+			using var context = new OrderSyncDbContext();
+			var value = context.Notifications.Find(id);
+			value.Status = false;
+			context.SaveChanges();
+		}
+
+		public void ChangeNotificationToTrue(int id)
+		{
+			using var context = new OrderSyncDbContext();
+			var value = context.Notifications.Find(id);
+			value.Status = true;
+			context.SaveChanges();
+		}
+
 		public List<Notification> GetAllNotificationByFalse()
 		{
 			using var context = new OrderSyncDbContext();

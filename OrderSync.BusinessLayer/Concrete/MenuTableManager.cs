@@ -20,23 +20,24 @@ namespace OrderSync.BusinessLayer.Concrete
 
         public void TAdd(MenuTable entity)
         {
-            throw new NotImplementedException();
-        }
+			_menuTableDal.Add(entity);
+
+		}
 
         public void TDelete(MenuTable entity)
         {
-            throw new NotImplementedException();
-        }
+			_menuTableDal.Delete(entity);
+		}
 
         public List<MenuTable> TGetAll()
         {
-            throw new NotImplementedException();
+            return _menuTableDal.GetAll();
         }
 
         public MenuTable TGetById(int id)
         {
-            throw new NotImplementedException();
-        }
+            return _menuTableDal.GetById(id);
+		}
 
         public int TTotalMenuTableCount()
         {
@@ -45,7 +46,7 @@ namespace OrderSync.BusinessLayer.Concrete
 
         public void TUpdate(MenuTable entity)
         {
-            throw new NotImplementedException();
-        }
+            _menuTableDal.Update(entity);
+		}
     }
 }

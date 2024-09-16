@@ -11,5 +11,7 @@ namespace OrderSync.DataAccessLayer.Abstract
     {
         int NotificationCountByFalseStatus();
         List<Notification> GetAllNotificationByFalse();
+        void ChangeNotificationToFalse(int id);
+		void ChangeNotificationToTrue(int id);
     }
 }

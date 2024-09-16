@@ -11,5 +11,7 @@ namespace OrderSync.BusinessLayer.Abstract
     {
         int TNotificationCountByFalseStatus();
         List<Notification> TGetAllNotificationByFalse();
+        void TChangeNotificationToFalse(int id);
+        void TChangeNotificationToTrue(int id);
 	}
 }
